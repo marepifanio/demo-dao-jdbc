@@ -4,26 +4,27 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Seller implements Serializable{
-	
+public class Seller implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private Integer id;
 	private String name;
 	private String email;
 	private Date birthDate;
-	private Double salary;
-	
-	private Department department;
-	
-	public Seller () {}
+	private Double baseSalary;
 
-	public Seller(Integer id, String name, String email, Date birthDate, Double salary, Department department) {
+	private Department department;
+
+	public Seller() {
+	}
+
+	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
-		this.salary = salary;
+		this.baseSalary = baseSalary;
 		this.department = department;
 	}
 
@@ -59,12 +60,12 @@ public class Seller implements Serializable{
 		this.birthDate = birthDate;
 	}
 
-	public Double getSalary() {
-		return salary;
+	public Double getBaseSalary() {
+		return baseSalary;
 	}
 
-	public void setSalary(Double salary) {
-		this.salary = salary;
+	public void setBaseSalary(Double baseSalary) {
+		this.baseSalary = baseSalary;
 	}
 
 	public Department getDepartment() {
@@ -94,7 +95,7 @@ public class Seller implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", salary="
-				+ salary + ", department=" + department + "]";
+		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
+				+ baseSalary + ", department=" + department + "]";
 	}
 }
